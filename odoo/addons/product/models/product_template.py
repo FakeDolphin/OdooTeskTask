@@ -385,7 +385,7 @@ class ProductTemplate(models.Model):
             self.uom_po_id = self.uom_id.id
     #Fix bug with updating manufacture field and saving with error model data
     @api.onchange('product_template_manufacture_id')
-    def _onchange_uom_id(self):
+    def _onchange_manufacture_id(self):
         if self.product_template_manufacture_id:
             self.product_template_model_id = ''
 
