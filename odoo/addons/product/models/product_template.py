@@ -10,7 +10,6 @@ from odoo.osv import expression
 
 _logger = logging.getLogger(__name__)
 
-
 class ProductTemplate(models.Model):
     _name = "product.template"
     _inherit = ['mail.thread', 'mail.activity.mixin', 'image.mixin']
@@ -134,10 +133,7 @@ class ProductTemplate(models.Model):
         'Internal Reference', compute='_compute_default_code',
         inverse='_set_default_code', store=True)
 
-    # Manufacture and models fields TEST TASK
-    product_template_manufacture_id = fields.Many2one('product.manufacture', 'Product Manufacture',
-                                                      ondelete = 'Set Null', delegate=True)
-    product_template_model_id = fields.Many2one('product.model', 'Product Model', delegate=True)
+
 
     pricelist_item_count = fields.Integer("Number of price rules", compute="_compute_item_count")
 
