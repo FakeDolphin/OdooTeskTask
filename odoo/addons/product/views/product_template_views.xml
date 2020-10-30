@@ -41,7 +41,8 @@
             <field name="categ_id" position="after">
                 <field name="default_code" attrs="{'invisible': [('product_variant_count', '>', 1)]}"/>
                 <field name="barcode" attrs="{'invisible': [('product_variant_count', '>', 1)]}"/>
-
+                <field name="product_template_manufacture_id"/>
+                <field name="product_template_model_id" domain="[('product_manufacture_id','=', product_template_manufacture_id)]"/>
             </field>
 
             <div name="button_box" position="inside">

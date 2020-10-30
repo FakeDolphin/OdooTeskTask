@@ -133,6 +133,10 @@ class ProductTemplate(models.Model):
         'Internal Reference', compute='_compute_default_code',
         inverse='_set_default_code', store=True)
 
+    # Manufacture and models fields TEST TASK
+    product_template_manufacture_id = fields.Many2one('product.manufacture', 'Product Manufacture',
+                                                      ondelete='Set Null')
+    product_template_model_id = fields.Many2one('product.model', 'Product Model', required=True, delegate=True)
 
 
     pricelist_item_count = fields.Integer("Number of price rules", compute="_compute_item_count")
